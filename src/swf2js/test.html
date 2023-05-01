@@ -1,0 +1,81 @@
+﻿<html>
+<head>
+
+    <script src="jquery-3.6.4.min.js"></script>
+</head>
+<body>
+    <input type="text" id="textbox" name="textbox">
+    <script src="KeyEventSimulator.js"></script>
+    <button id="wbutton">W Button</button>
+    <button id="sbutton">S Button</button>
+    <button id="abutton">A Button</button>
+    <button id="dbutton">D Button</button>
+
+    <script>
+        $("button").on("contextmenu", function (e) {
+            e.preventDefault(); //this is needed to ignore the original behavior
+        });
+
+        $("#wbutton").on("touchstart", function (e) {
+            console.log('W Key Down')
+            simulateKey(87, "down");
+            e.preventDefault(); //this is needed to ignore the original behavior
+            var text = $('#textbox');
+            text.val('w');
+          
+        });
+        $("#wbutton").on("touchend", function (e) {
+            console.log('W Key Up')
+            simulateKey(87, "up");
+            e.preventDefault(); //this is needed to ignore the original 
+                var text = $('#textbox');
+                text.val('w end');
+        });
+
+        $("#sbutton").on("touchstart", function (e) {
+            console.log('S Key Down')
+            simulateKey(83, "down");
+            e.preventDefault(); //this is needed to ignore the original behavior
+                var text = $('#textbox');
+                text.val('s');
+        });
+        $("#sbutton").on("touchend", function (e) {
+            console.log('S Key Up')
+            simulateKey(83, "up");
+            e.preventDefault(); //this is needed to ignore the original behavior
+                var text = $('#textbox');
+                text.val('s end');
+        });
+
+        $("#abutton").on("touchstart", function (e) {
+            console.log('A Key Down')
+            simulateKey(65, "down");
+            e.preventDefault(); //this is needed to ignore the original behavior
+                var text = $('#textbox');
+                text.val('a');
+        });
+        $("#abutton").on("touchend", function (e) {
+            console.log('A Key Up')
+            simulateKey(65, "up");
+            e.preventDefault(); //this is needed to ignore the original behavior
+                var text = $('#textbox');
+                text.val('a end');
+        });
+
+        $("#dbutton").on("touchstart", function (e) {
+            console.log('D Key Down')
+            simulateKey(68, "down");
+            e.preventDefault(); //this is needed to ignore the original behavior
+                var text = $('#textbox');
+                text.val('d');
+        });
+        $("#dbutton").on("touchend", function (e) {
+            console.log('D Key Up')
+            simulateKey(68, "up");
+            e.preventDefault(); //this is needed to ignore the original behavior
+                var text = $('#textbox');
+                text.val('d end');
+        });
+    </script>
+</body>
+</html>

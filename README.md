@@ -1,0 +1,1 @@
+# SWF Player for UWPThis is not finished, currently figuring out why injected key input isn't working on Windows Moblie.## What is it?## Current Progress## Planned## Issues

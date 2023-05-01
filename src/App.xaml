@@ -1,0 +1,29 @@
+﻿<Application
+    x:Class="SWF_Player.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SWF_Player">
+
+    <Application.Resources>
+
+        <Style x:Key="MenuItem" TargetType="Button">
+            <Setter Property="Height" Value="80"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="Background" Value="#fafafa"/>
+        </Style>
+
+        <!--Text Styles-->
+
+        <Style TargetType="TextBlock" x:Key="Title">
+            <Setter Property="FontSize" Value="22"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Foreground" Value="#333333"/>
+        </Style>
+
+        <Style TargetType="TextBlock" x:Key="Body">
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Foreground" Value="#8c8c8c"/>
+        </Style>
+    </Application.Resources>
+
+</Application>

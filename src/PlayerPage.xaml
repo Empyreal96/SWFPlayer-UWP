@@ -1,0 +1,44 @@
+﻿<Page
+    x:Class="SWF_Player.PlayerPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SWF_Player"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    NavigationCacheMode="Enabled"
+    Background="#fafafa">
+
+    <Grid x:Name="PlayerGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" x:Name="ErrorDialog" Visibility="Collapsed" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Background="White" BorderBrush="#FF020000" >
+            <TextBlock Text="Error" FontSize="18" HorizontalAlignment="Center" RequestedTheme="Light" Margin="0,5,0,0"/>
+            <TextBlock Text="Make sure you have loaded a file first" FontSize="14" RequestedTheme="Light" Margin="15,10,15,10"/>
+            <Button AllowFocusOnInteraction="False" Content="Close" HorizontalAlignment="Stretch" RequestedTheme="Light" Click="Button_Click" Background="{x:Null}" Foreground="#FFC62828" FocusVisualSecondaryBrush="#FFCFD8DC"/>
+        </StackPanel>
+        <Grid Grid.Row="1" Background="Gray">
+            <Image Source="assets/Arrows.png" HorizontalAlignment="Left" Margin="17,86,0,-13" Width="220" Visibility="Collapsed"/>
+            <Button x:Name="UpButton" Tapped="UpButton_Tapped" Background="Transparent" Width="50" Height="75" IsHoldingEnabled="True" Holding="UpButton_Holding" PointerReleased="UpButton_PointerReleased" PointerMoved="UpButton_PointerMoved" HorizontalAlignment="Left" Margin="99,0,0,0">
+                <Image Source="assets/uparrow.png"/>
+            </Button>
+            <Button x:Name="DownButton" Tapped="DownButton_Tapped" Background="Transparent" Width="50" Height="75"  IsHoldingEnabled="True" Holding="DownButton_Holding" PointerReleased="DownButton_PointerReleased" PointerMoved="DownButton_PointerMoved" HorizontalAlignment="left" Margin="99,200,0,0">
+                <Image Source="assets/downarrow.png"/>
+            </Button>
+            <Button x:Name="LeftButton" Tapped="LeftButton_Tapped" Background="Transparent" Width="75" Height="50"  IsHoldingEnabled="True" Holding="LeftButton_Holding" PointerReleased="LeftButton_PointerReleased" PointerMoved="LeftButton_PointerMoved" HorizontalAlignment="left" Margin="29,100,0,0">
+                <Image Source="assets/leftarrow.png"/>
+            </Button>
+            <Button x:Name="RightButton" Tapped="RightButton_Tapped" Background="Transparent" Width="75" Height="50"  IsHoldingEnabled="True" Holding="RightButton_Holding" PointerReleased="RightButton_PointerReleased" PointerMoved="RightButton_PointerMoved" HorizontalAlignment="left" Margin="145,100,0,0">
+                <Image Source="assets/rightarrow.png"/>
+
+            </Button>
+
+            <ToggleSwitch x:Name="wsadToggle" Header="WSAD" HorizontalAlignment="Left" IsOn="True" VerticalAlignment="Top" />
+
+            <TextBlock x:Name="holdingDebug" HorizontalAlignment="Right" Text="Press Button" VerticalAlignment="Bottom" Margin="0,0,5,5"/>
+        </Grid>
+
+    </Grid>
+</Page>
